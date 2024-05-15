@@ -1,0 +1,7 @@
+# Ignore latex build related files
+.aux
+.fdb*
+.fls
+.log
+.out
+.sync*
