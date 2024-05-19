@@ -331,3 +331,11 @@ Between 2023 and 2024 I began transitioning to a Lead role, where I ran daily st
         RF Eval Bringup         - Craig Stuber
 
         Chassis Manager / RFFE Build Scripts - Daniel Walsh
+
+2024 as TND Lead
+    Involves bi-weekly standup with Software(Kyle), Hardware (Bob/Tahsin/Adam), and Leegia (what is Leegia?)
+    I believe the objective is to create some MVP (minimum viable product) FW image to electrically test the FPGA. This is for GPIO, GTH, SPI, UART, JTAG, LEDs, and other peripherals. This is pretty much entirely tested with a JTAG AXI4 Manager hooked up to a mixture of our internal AXI4L IP and Xilinx AXI4L/AXI4 IP (like spi subordinate), (spi flash to startupe3/iproge2).
+    
+    We use a command line script for vivado hw_server to open a connection to the FPGA over JTAG on a separate port than our Vivado GUI is connected to. We can reprogram the board and also keep our test script hw_server open this way. A python script issues JTAG AXI commands over this socket to the FPGA. We abstract certain GPIO (like DSA, LED, etc) to be run as higher level functional tests. Though initially we are just interested in writing to each bit to configure each IO and verify the GPIO works electrically. We probe various test points/ resistors on the card and use an oscope to see the logic level has adjusted. The objective is to produce an automated test suite of scripts that could be used to trigger various RF events and have a technician observe working GPIO basically.
+
+    I am also the responsible individual for higher level functional reviews where I act as the firmware representative for the board (both Chassis Manager and Channelizer). These are high level reviews where the hardware RI shows us the board schematic and abstracted view of certain functions (like VSWR, RF Control, Ethernet, etc). Basically just involves getting awareness of other peoples tasking and making sure the tasking we have planned/ or have already accomplished is reviewed and there are no sudden updates (specifically thinking of VSWR detection here, with AD7266 over LVDS SPI at 2 ADC's on a single data line).
