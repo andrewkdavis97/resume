@@ -25,7 +25,7 @@
 }
 
 \section{Professional Summary}
-\raggedright{I am a VHDL FPGA Engineer with 5 years of industry experience. I have been both an individual contributor, and I have lead a small team of firmware engineers since the beginning of 2024. My work has been primarily Zynq Ultrascale+ family of devices, with a focus on DAC/ADC RF Data Converter and 10GbE Ethernet IP.}
+\raggedright{I am an FPGA Engineer with 5 years of VHDL industry experience, and I am looking for opportunities to accelerate my technical proficiency and career growth. I have been both an individual contributor since 2019, and I have led a small team of firmware engineers since the beginning of 2024. My work has been primarily Zynq Ultrascale+ family of devices, with a focus on DAC/ADC RF Data Converter and 10G Ethernet IP.}
 
 \section{Skills}
 \begin{itemize}
@@ -61,7 +61,12 @@ Bachelor of Science in Computer Engineering | 3.520 GPA
 \headerwithlabel{SRC Inc}{Syracuse, NY}{June 2019 -- Present}
 Firmware Engineer
 \begin{itemize}
-  \item
+  \item Created SVD to Latex Python command line tool. Automatically generated Latex based off the CMSIS SVD specification. Tool was used to generate memory-mapped documentation for AXI4-Lite register, FIFO, and RAM memory style regions.
+  \item Detailed Design, Code and Simulation for a CORDIC Processing IP. Designed using a CORDIC Rotation processor that could accept pipelined requests. (what FPGA?)
+  \item Detailed Design, Code and Simulation for a DAC8771 (single channel, 16bit) AXI4-Lite to SPI interface. Also used Python script to configure and set output voltages via SPI, through AXI4-Lite commands issues through Zynq US+ PS. Verification performed with Oscilloscope. (what FPGA?)
+  \item Detailed Design, Code and Simulation for an electrical Resolver (azimuth/elevation/speed) feedback loop. (what FPGA?)
+  \item Detailed Design, Code and Simulation for an I/O Recoder IP. Could detect edge detections on GPIO and would record and store time deltas between transitions. Stored in BRAM and could be later played back for debugging efforts. (what FPGA?)
+  \item Updated existing RFDC block design to use all 7 DACs across 2 Tiles. Integrated IFGEN
   % \item Modeled and drafted designs for critical structures for the Crew Dragon vehicle.
   % \item {\bf Projects:} Crew Dragon Weldment Doubler
 \end{itemize}

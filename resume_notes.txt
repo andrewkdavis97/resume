@@ -339,3 +339,53 @@ Between 2023 and 2024 I began transitioning to a Lead role, where I ran daily st
     We use a command line script for vivado hw_server to open a connection to the FPGA over JTAG on a separate port than our Vivado GUI is connected to. We can reprogram the board and also keep our test script hw_server open this way. A python script issues JTAG AXI commands over this socket to the FPGA. We abstract certain GPIO (like DSA, LED, etc) to be run as higher level functional tests. Though initially we are just interested in writing to each bit to configure each IO and verify the GPIO works electrically. We probe various test points/ resistors on the card and use an oscope to see the logic level has adjusted. The objective is to produce an automated test suite of scripts that could be used to trigger various RF events and have a technician observe working GPIO basically.
 
     I am also the responsible individual for higher level functional reviews where I act as the firmware representative for the board (both Chassis Manager and Channelizer). These are high level reviews where the hardware RI shows us the board schematic and abstracted view of certain functions (like VSWR, RF Control, Ethernet, etc). Basically just involves getting awareness of other peoples tasking and making sure the tasking we have planned/ or have already accomplished is reviewed and there are no sudden updates (specifically thinking of VSWR detection here, with AD7266 over LVDS SPI at 2 ADC's on a single data line).
+
+
+
+
+
+
+
+
+
+
+    FPGA Engineer Requisition Requirements
+    Description:
+        - Architect, design, and implement FPGA solutions in VHDL
+        - Design and optimize high-performance digital circuits and systems using VHDL using industry best practices and digital design methodologies.
+        - Conduct functional and performance verification of FPGA designs with simulation and hardware testing, identifying and resolving design issues.
+        - Analyze and understand complex system requirements and translate them into efficient and optimized embedded architectures and designs.
+        - Utilize advanced tools and techniques for FPGA implementation to achieve optimized performance, power, and utilization trade-off.
+        - Collaborate with digital board designers to ensure successful integration of FPGA designs onto PCBs and hardware platforms.
+        - Provide technical leadership and mentorship to junior engineers, fostering growth and development in FPGA design.
+        - Deep understanding of FPGA design flow including RTL design, verification, logic synthesis, prototyping, timing analysis, and lab debug.
+        - Use Python, TCL and other scripting languages to automate continuous development and continuous integration CI/CD workflows.
+    Requirements:
+        - Proficiency in VHDL and familiarty with Xilinx FPGA toolchain
+        - Proficiency with Vivado, with knowledge of recent Xilinx FPGA architectures.
+        - Proficiency using RTL simulation tools.
+        - Deep understanding of digital logic design, embedded systems, and FPGA architecture.
+        - Experience with FPGA debugging, timing analysis, and optimization techniques.
+        - Ability to work collaboratively in a team environment, with excellent communication skills
+    
+
+    FPGA Engineer Requisition Requirements
+    Description:
+        - Early stage R&D and commercialization across complex applications including robots, sensing, advanced manufacturing, and space.
+        - Direct collaborations with engineering and exective leadership.
+        - Is a fantastic opportunity to accelerate technical proficiency and career growth.
+        - Work with principal FPGA, software, and hardware engineers on developing new systems and capabilities.
+        - Create and integrate FPGA IP using VHDL, high level synthesis, and/or model based design tools. 
+        - Deploy FPGA designs to development boards and new/custom hardware for demonstration, test, debug, and verification.
+        - Generate high-reliability and high-performance designs for commercial and defense applications.
+        - Understand, satisfy and adapt key system-level architectural requirements.
+    Requirements:
+        - Proficiency in VHDL.
+        - Experience with Xilinx FPGAs/SoCs and Vivado.
+        - Experience with Zynq 7000, Zynq Ultrascale+, Kintex Ultrascale+, and Spartan.
+        - Effectively communicate with software development teams and generate clear, and concise documentation.
+        - Experience integrate 3rd party IP cores into new designs.
+        - Familiarity with multi-gigabit transceivers and embedded busses, like 1G/10G Ethernet, PCIe Gen3, CAN, and USB.
+        - Familiarity with Python and TCL.
+        - Comfortable with large degrees of autonomy and personal accountability.
+        - Capable of methodically and creatively solving complex technical challenges.
