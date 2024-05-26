@@ -201,7 +201,7 @@ At some point I did a TI software task where I calculated the input PL clock fre
                 Scaled incoming TX data streams for a single Amplifier by up to 1/3, depending on how many streams were active at the same time. This was to prevent overflow and saturation of data on the DACs.
         11/04
             XTRI Rx Stream Combiner 
-                The IOPE had limited resource utilization to be able to handle 5 RX streams at once. To work around it, we adjusted XTR on the WPE to combine RX streams into 2/3 streams, before going over HSS to IOPE (XRFE, Xylem Receive Front End). This was like XTRI Tx (dead horse) but muxing logic instead of demuxing logic. The muxing was done based on the RF Center Frequency of each stream. 400-915 combined into 1 stream, and 2400-5800 combined into another. This was implemented with several AXI4S Crossbar Switches.
+                The IOPE had limited resource utilization to be able to handle 5 RX streams at once. To work around it, we adjusted XTR on the WPE to combine RX streams into 2/3 streams, before going over HSS to IOPE (XRFE, Xylem Receive Front End). This was like XTRI Tx (dead horse) but muxing logic instead of demuxing logic. The muxing was done based on the RF Center Frequency of each stream. Lower frequencies combined into 1 stream, higher combined into another. This was implemented with several AXI4S Crossbar Switches.
         11/17
             XTR Add Time ID to Time Check 
                 Updated XTR Scheduling Time Check logic to take into account the current time ID from the Time Manager (sync'd to other FPGAs via 1 PPS) and Time ID of the scheduled Slice. At the time it was only looking at the picosecond timestamp from the Time Manager and the scheduled timestamp of the Slice. This was to adjust the logic to account for time skip and resync events properly.
@@ -389,3 +389,11 @@ Between 2023 and 2024 I began transitioning to a Lead role, where I ran daily st
         - Familiarity with Python and TCL.
         - Comfortable with large degrees of autonomy and personal accountability.
         - Capable of methodically and creatively solving complex technical challenges.
+
+
+
+
+
+
+https://stackoverflow.com/questions/43762338/how-to-remove-file-from-git-history
+to remove this file from the repo history after you are done with this resume
