@@ -27,75 +27,84 @@
 }
 
 \section{Professional Summary}
-\raggedright{I am an FPGA Engineer with 5 years of VHDL industry experience. I am looking for opportunities to accelerate my technical proficiency and growth. I have been both an individual contributor since June 2019, and I have been a lead since October 2023. My work has been primarily with Zynq Ultrascale+ family of devices.}
+\begin{adjustwidth}{.3cm}{}
+  \raggedright{I am an FPGA Engineer with 5 years of VHDL industry experience. I am looking for opportunities to accelerate my technical proficiency and growth. I have been both an individual contributor since June 2019, and I have been a team lead since October 2023. My work has been primarily with Zynq Ultrascale+ family of devices.}
+\end{adjustwidth}
+
+\vfill
 
 \section{Education}
 \headerwithlabel{ Clarkson University } { Potsdam, NY } { August 2015 -- May 2019 }
-\begin{adjustwidth}{.5cm}{}
-  GPA 3.520, Bachelor of Science in Computer Engineering \\
+\begin{adjustwidth}{.3cm}{}
+  GPA 3.520, Bachelor of Science in Computer Engineering\\
   \headerwithlabel{ Undergraduate Research } { 3D Fingerprint Scanning and Modeling } { }
-  Created a prototype to photograph fingers and output 3D renders. Helped develop an algorithm to unwrap the 3D renders into nail-to-nail fingerprint rolls. Presented at the 2017 IARPA N2N Challenge in Laurel, Maryland. \\
+  Created a prototype to photograph fingers and output 3D renders. Helped develop an algorithm in C++ to unwrap the 3D renders into nail-to-nail fingerprint rolls. Presented at the 2017 IARPA N2N Challenge in Laurel, Maryland.
 \end{adjustwidth}
+
+\vfill
 
 \section{Work Experience}
 \headerwithlabel{ SRC Inc } { Syracuse, NY } { June 2019 -- Present }
+\begin{adjustwidth}{.3cm}{}
 \begin{itemize}
-  \item As team lead: oversee a team of 2-3 engineers; lead daily standups; assign bi-weekly tasking. 
-  \item As individual contributor: architecture and documentation; coding and simulation; hardware integration. 
-  \item As interview team member: performed over 20 interviews, evaluate technical skill; evaluate culture fit. 
-\end{itemize}
-
-
-\begin{adjustwidth}{.5cm}{}
-  \headerwithlabel{ NGEW } {Python, Individual Contributor } { June 2019 -- November 2019 }
-  Created SVD to LaTeX tool in Python, based off of CMSIS SVD specification. This tool generates memory-mapped documentation for AXI4-Lite regions: register, FIFO, and RAM memory styles.
-\end{adjustwidth}
-
-
-\begin{adjustwidth}{.5cm}{} 
-  \headerwithlabel{ RECU } { MPSoC Motor Control, ZCU106, Individual Contributor } { December 2019 -- November 2020 }
-  Motor control with DAC8771 (single channel, 16bit DAC). AXI4-Lite to SPI interface. Wrote to DAC registers via SPI from Zynq US+ PS interfaced through Python. Verification with Oscilloscope.
-\end{adjustwidth}
-
-
-\begin{adjustwidth}{.5cm}{}
-  \headerwithlabel{ RFSTIM } {RFSoC Multi-array Stimulator, ZCU111, Individual Contributor } { December 2020 -- May 2022 }
-  \begin{itemize}
-  \item Implemented 10GbE with SFP PHY/MAC. An external dynamic PDW generator sent ethernet packets containing transmit-scheduled PDWs. Designed message parsing logic on top of the extracted UDP data to extract the fields needed for transmit on the ZCU111 DACS.
-  
-  \item Designed AXI4-Lite controlled I/Q scaling. Scale factors were multiplied onto I/Q from full scale (1) downto 0. Adjusted both phase and amplitude values. Inputs were polar and were converted to complex I/Q using Xilinx CORDIC. Data was then fed into complex multipliers against a single I/Q data stream from IFGEN, to create I/Q manipulated streams before outputting to DACS.
+  \item[$\bullet$] As team lead: oversee a team of 2-3 engineers; lead daily standups; assign bi-weekly tasking. 
+  \item[$\bullet$] As individual contributor: architecture and documentation; coding and simulation; hardware integration. 
+  \item[$\bullet$] As interview team-member: performed over 20 interviews, where I evaluate technical skill; and evaluate culture fit. 
 \end{itemize}
 \end{adjustwidth}
 
-
-\begin{adjustwidth}{.5cm}{}
-  \headerwithlabel{ Protean } { RFSoC, XCZU43DR, Lead } { May 2023 -- September 2023 }
+\begin{adjustwidth}{.3cm}{}
+  \headerwithlabel{ RF Front End } { MPSoC, XCAU15P, Team Lead } { October 2023 -- Present }
   \begin{itemize}
-    \item FPGA design for Zynq Ultrascale+ AMS WB3XR2 Dual RFSoC. Match hardware requirements to FPGA IO planning. Documented high level AXI4L memory map from betweeb RFPE0 and RFPE1. Communication over 10G talks to RFPE0, which talks to RFPE1 over HSS LVDS. Each RFPE was allocated 4.25GB of user space addressable by PL.
-    \item Performed initial bringup of card using TCL build scripts and Petalinux image using third party IP and Zynq US+ block design.
+    \item[$\bullet$] Lead a team of 3 engineers to design, simulate, and implement firmware targetting the FPGA.
+    \item[$\bullet$] FPGA design for Artix Ultrascale+ RF Front End card. Matched hardware requirements to FPGA IO planning and clock management.
+    \item[$\bullet$] Designed firmware that queues RF Control MORA messages and communicates with off-card hardware (filter shift registers, amplifiers, attentuators). 
+    \item[$\bullet$] Implemented manual clock routing for external clock source and performed post route timing analysis.
   \end{itemize}
 \end{adjustwidth}
 
-
-\begin{adjustwidth}{.5cm}{}
-  \headerwithlabel{ Protean } { RF Front End, XCAU15P, Lead } { October 2023 -- Present }
+\begin{adjustwidth}{.3cm}{}
+  \headerwithlabel{ SDR } { RFSoC, XCZU43DR, Lead } { May 2023 -- September 2023 }
   \begin{itemize}
-    \item FPGA design for Artix Ultrascale+ RF Front End card. Matched hardware requirements to FPGA IO planning and clock management.
-    \item Designed front end to queue RF Control MORA messaging and write to interface hardware (filter shift registers, amplifiers, attentuators). Performed hardware integration using python scripts.
-    \item Designed FPGA boot sequence. Artix is not MPSoC, so there is PS image or power management. Initialized ethernet to receive down tactical image for AXI4L addressable SPI Flash. Interface to Flash via STARTUPE3 primitive to access FPGA configuration pins. Configured ICAPE3 primitive to schedule a reboot to the FPGA. 
-    \item Test and Development of FPGA. Non-tactical image meant to control GPIO and various peripherals attached to FPGA. All of the GPIO is AXI4L controlled, from Xilinx JTAG to AXI4L Crossbar. Documented an I/O test plan and wrote top level FW to implement each test case. Did manual clock routing for external clock source. Routedthrough an HDIO not on a CMT, which can cause Vivado to fail on implementation. Manually constrainted to go through IBUFDS to BUFG to MMCM on the same CMT.
+    \item[$\bullet$] FPGA design for Zynq Ultrascale+ AMS WB3XR2 Dual RFSoC. Matched hardware requirements to FPGA IO planning. Designed high level AXI4L memory map between RFSOC0 and RFSoC1. Documented the allocation of 4.25GB of user space addressable by each RFSoCs programmable logic.
+    \item[$\bullet$] Performed initial bringup of card using TCL build scripts and Petalinux image using third party IP and Zynq US+ block design.
   \end{itemize}
 \end{adjustwidth}
 
+\begin{adjustwidth}{.3cm}{}
+  \headerwithlabel{ DAC Stimulator } { RFSoC, ZCU111, Individual Contributor } { December 2020 -- May 2022 }
+  \begin{itemize}
+  \item[$\bullet$] Integrated 10GbE with SFP PHY/MAC. An external PDW generator sent ethernet packets containing transmit-scheduled pulse descriptor words. Designed message parsing logic on top of the extracted UDP data to extract the fields needed for transmit on the ZCU111 DACS.
+  \item[$\bullet$] Designed AXI4-Lite controlled I/Q scaling. Scale factors were multiplied onto I/Q from full scale (1) down to zero. Polar inputs converted to complex I/Q and fed into complex multipliers against a single I/Q data stream from the transmit scheduler.
+\end{itemize}
+\end{adjustwidth}
 
-% \section{Skills}
-% \begin{tabular}{ l l }
-  % \textbf{Hardware}   & Zynq US+ RFSoC, Zynq US+ MPSoC, Zynq7000, Artix US+ \\
-  % \textbf{Software}   & {\textrm \LaTeX}, Git, Perforce, Confluence, MS Visio, Linux, Windows \\
-  % \textbf{Languages}  & VHDL, TCL, Python (VUnit/CocoTB simulation, and hardware integration scripting) \\
+\begin{adjustwidth}{.3cm}{} 
+  \headerwithlabel{ Motor Control } { MPSoC, ZCU106, Individual Contributor } { December 2019 -- November 2020 }
+  \begin{itemize}
+  \item[$\bullet$] Motor control with DAC8771 (single channel, 16bit DAC). AXI4-Lite to SPI interface. Wrote to DAC registers via SPI from Zynq US+ PS interfaced through Python. Verification with Oscilloscope.
+  \end{itemize}
+\end{adjustwidth}
+
+\begin{adjustwidth}{.3cm}{}
+  \headerwithlabel{ SVD to LaTeX } {Python, Individual Contributor } { June 2019 -- November 2019 }
+  \begin{itemize}
+  \item[$\bullet$] Created SVD to LaTeX tool in Python, based off of CMSIS SVD specification. This tool generates memory-mapped documentation for AXI4-Lite regions: register, FIFO, and RAM memory styles.
+  \end{itemize}
+\end{adjustwidth}
+
+\vfill
+
+\section{Skills}
+\begin{itemize}
+  \item[$\bullet$] \textbf{Hardware}:  Zynq US+ RFSoC/MPSoC, Zynq7000, Artix US+ \\
+  \item[$\bullet$] \textbf{Software}: VSCode, Git, JIRA, Perforce, Confluence, MS Visio, {\textrm \LaTeX}, Linux, Windows \\
+  \item[$\bullet$] \textbf{Languages}: VHDL, TCL, Python (VUnit/CocoTB simulation, and integration scripting) \\
+  \item[$\bullet$] \textbf{Functional}: Mentor, Strong Communicator, Team Player, Self Motivator, Book Reader \\
   % \textbf{Standards}  & AXI4-Stream, AXI4-Lite, Ethernet, SPI  \\
-  % \textbf{Functional} & Mentorship, Tasking, JIRA Sprints, Daily Standups \\
-  % ZUS+ RFSoC (XCZU28DR:ZCU111, XCZU43DR, XCZU47DR), ZUS+ MPSoC (XCZU9EG:ZCU101, XCZU7EV:ZCU106), Zynq7000 (), Artix US+ ()
-%  \end{tabular}
+  % ZUS+ RFSoC (XCZU28DR:ZCU111?S, XCZU43DR, XCZU47DR), ZUS+ MPSoC (XCZU9EG:ZCU101, XCZU7EV:ZCU106), Zynq7000 (), Artix US+ ()
+\end{itemize}
+
+\vfill
 
 \end{document}
